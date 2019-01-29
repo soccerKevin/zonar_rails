@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-edit',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-edit.component.scss']
 })
 export class ProductEditComponent implements OnInit {
-
-  constructor() { }
+  data: Object;
+  constructor(public apiService: ApiService , public router : Router, private route: ActivatedRoute){}
 
   ngOnInit() {
+    const paramsId = this.route.snapshot.paramMap.get('id');
+    this.apiService.get("products/" + paramsId ).subscribe((data : any)=>{
+      this.data = data
+    });
   }
 
 }
