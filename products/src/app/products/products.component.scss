@@ -1,0 +1,28 @@
+.products{
+  list-style-type: none;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 22% 22% 22% 22%;
+
+  .product{
+    border: inset 2px black;
+    flex-basis: 25%;
+    padding: 5%;
+    padding-top: 5px;
+    position: relative;
+    min-height: 100px;
+
+    &:hover{ border: inset 2px blue; }
+
+    h3{
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    .price{
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+  }
+}

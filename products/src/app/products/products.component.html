@@ -1,4 +1,9 @@
 <h2>Products</h2>
 <ul class="products">
-  <li *ngFor="let product of products">
+  <li *ngFor="let product of products" (click)="open($event, item)">
+    <div class="product">
+      <h3 class="name">{{product.name}}</h3>
+      <div class="description">{{product.description}}</div>
+      <div class="price">${{product.price}}</div>
+    </div>
 </ul>
