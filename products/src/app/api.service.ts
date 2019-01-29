@@ -10,8 +10,13 @@ export class ApiService {
 
   constructor(public http: HttpClient) { }
 
-  public get(path) {
+  public get(path:string) {
     var endpoint = this.API_URL + path;
     return this.http.get(endpoint);
+  }
+
+  public update(path:string, body:any){
+    var endpoint = this.API_URL + path;
+    return this.http.put(endpoint,body);
   }
 }

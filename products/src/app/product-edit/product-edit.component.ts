@@ -9,11 +9,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-edit.component.scss']
 })
 export class ProductEditComponent implements OnInit {
-  data: Object;
+  data: any;
   constructor(public apiService: ApiService , public router : Router, private route: ActivatedRoute){}
 
   save(){
-    debugger
+    this.apiService.update("products/" + this.data.id, {product: this.data} ).subscribe((data : any)=>{
+      console.log("saved");
+    });
   }
 
   ngOnInit() {

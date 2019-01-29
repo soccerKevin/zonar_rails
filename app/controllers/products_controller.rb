@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  include ActionController::MimeResponds
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -43,6 +44,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    # binding.pry
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -72,6 +74,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.fetch(:product, {})
+      # params.fetch(:product, {})
+      params.require(:product).permit(:name, :description, :price)
     end
 end

@@ -1,22 +1,24 @@
 <div class="product edit">
-  <div class="fields">
-    <div class="name row">
-      <label>Name: </label>
-      <input value="{{data.name}}">
-    </div>
+  <form>
+    <div class="fields">
+      <div class="name row">
+        <label>Name: </label>
+        <input name="name" value="{{data.name}}" [(ngModel)]="data.name">
+      </div>
 
-    <div class="description row">
-      <label>Description: </label>
-      <input value="{{data.description}}">
-    </div>
+      <div class="description row">
+        <label>Description: </label>
+        <input name="description" value="{{data.description}}" [(ngModel)]="data.description">
+      </div>
 
-    <div class="price row">
-      <label>Price: </label>
-      $<input value="{{data.price}}">
-    </div>
+      <div class="price row">
+        <label>Price: </label>
+        $<input name="price" value="{{data.price}}" [(ngModel)]="data.price">
+      </div>
 
-    <div class="save row">
-      <span class="save" (click)="save()">Save</span>
+      <div class="save row">
+        <input type="submit" class="save" value="Save" (click)='save()'>
+      </div>
     </div>
-  </div>
+   </form>
 </div>

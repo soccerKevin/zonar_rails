@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
   constructor(public apiService: ApiService , public router : Router) {}
 
   open(e, product){
-    this.router.navigate(['/products/edit/' + product.id]);
+    this.router.navigate(['/products/edit/', product.id]);
   }
 
   ngOnInit() {
