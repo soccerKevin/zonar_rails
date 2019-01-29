@@ -13,7 +13,8 @@ export class ProductsComponent implements OnInit {
 
   constructor(public apiService: ApiService , public router : Router) {}
 
-  open(){
+  open(e, product){
+    this.router.navigate(['/products/edit/' + product.id]);
   }
 
   ngOnInit() {

@@ -12,6 +12,10 @@ export class ProductEditComponent implements OnInit {
   data: Object;
   constructor(public apiService: ApiService , public router : Router, private route: ActivatedRoute){}
 
+  save(){
+    debugger
+  }
+
   ngOnInit() {
     const paramsId = this.route.snapshot.paramMap.get('id');
     this.apiService.get("products/" + paramsId ).subscribe((data : any)=>{
